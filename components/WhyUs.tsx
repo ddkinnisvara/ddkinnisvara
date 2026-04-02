@@ -3,49 +3,49 @@ import { useTranslations } from 'next-intl'
 import RevealOnScroll from './RevealOnScroll'
 
 const points = [
-  { num: '01', titleKey: 'point1Title', descKey: 'point1Desc', delay: 0 },
-  { num: '02', titleKey: 'point2Title', descKey: 'point2Desc', delay: 0.1 },
-  { num: '03', titleKey: 'point3Title', descKey: 'point3Desc', delay: 0.2 },
-  { num: '04', titleKey: 'point4Title', descKey: 'point4Desc', delay: 0.3 },
+  { num: '01', titleKey: 'point1Title', delay: 0 },
+  { num: '02', titleKey: 'point2Title', delay: 0.1 },
+  { num: '03', titleKey: 'point3Title', delay: 0.2 },
+  { num: '04', titleKey: 'point4Title', delay: 0.3 },
 ] as const
 
 export default function WhyUs() {
   const t = useTranslations('whyUs')
 
   return (
-    <section id="about" className="bg-bg2 py-[120px] px-[60px] max-md:py-20 max-md:px-6">
-      <div className="grid grid-cols-2 gap-20 items-start max-md:grid-cols-1 max-md:gap-12">
+    <section id="about" className="bg-bg2 py-[120px] px-[60px] max-md:py-16 max-md:px-5">
+      <div className="grid grid-cols-2 gap-20 items-start max-md:grid-cols-1 max-md:gap-10">
+
+        {/* Left — sticky display column */}
         <RevealOnScroll>
-          <div className="sticky top-[120px] max-md:static">
-            <div className="font-bebas text-[clamp(100px,14vw,220px)] leading-[0.85] text-transparent text-stroke-border tracking-[-5px] mb-10 max-md:text-[80px]">
+          <div className="sticky top-[100px] max-md:static">
+            <div className="font-space text-[11px] tracking-[4px] text-gold uppercase flex items-center gap-3 mb-6">
+              <span className="block w-8 h-px bg-gold shrink-0" />
               WHY
-              <br />
-              D&amp;D
             </div>
-            <p className="text-[18px] text-muted max-w-[400px] leading-[1.8]">
-              {t('tagline')}
-            </p>
+            <div
+              className="font-bebas leading-[0.88] tracking-[-2px]"
+              style={{ fontSize: 'clamp(100px, 13vw, 210px)' }}
+            >
+              <span className="block text-off-white">D&amp;D</span>
+            </div>
           </div>
         </RevealOnScroll>
 
-        <div className="flex flex-col pt-10 max-md:pt-0">
-          {points.map(({ num, titleKey, descKey, delay }, i) => (
+        {/* Right — numbered points */}
+        <div className="flex flex-col pt-2 max-md:pt-0">
+          {points.map(({ num, titleKey, delay }, i) => (
             <RevealOnScroll key={num} delay={delay}>
               <div
-                className={`py-10 grid grid-cols-[80px_1fr] gap-8 items-start border-b border-gold/[0.08] ${
-                  i === 0 ? 'border-t border-gold/[0.08]' : ''
+                className={`py-9 grid grid-cols-[56px_1fr] gap-6 items-center border-b border-gold/[0.1] max-md:py-7 max-md:grid-cols-[44px_1fr] max-md:gap-4 ${
+                  i === 0 ? 'border-t border-gold/[0.1]' : ''
                 }`}
               >
-                <div className="font-bebas text-[64px] text-gold leading-none opacity-50">
+                <div className="font-bebas text-[48px] text-gold leading-none opacity-25 max-md:text-[36px]">
                   {num}
                 </div>
-                <div>
-                  <div className="font-bebas text-[28px] tracking-[1px] mb-3">
-                    {t(titleKey)}
-                  </div>
-                  <p className="text-[15px] text-muted leading-[1.7]">
-                    {t(descKey)}
-                  </p>
+                <div className="font-bebas text-[28px] tracking-[0.5px] text-off-white leading-none max-md:text-[22px]">
+                  {t(titleKey)}
                 </div>
               </div>
             </RevealOnScroll>

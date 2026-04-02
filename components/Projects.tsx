@@ -2,82 +2,71 @@
 import { useTranslations } from 'next-intl'
 import RevealOnScroll from './RevealOnScroll'
 
-const bgGradients = [
-  'linear-gradient(135deg, #1f1c17 0%, #2a2318 100%)',
-  'linear-gradient(135deg, #17191f 0%, #1a2030 100%)',
-  'linear-gradient(135deg, #1a1714 0%, #231e17 100%)',
-  'linear-gradient(135deg, #141618 0%, #1c2020 100%)',
-]
-
 const cards = [
   { tagKey: 'card1Tag', titleKey: 'card1Title', locKey: 'card1Loc', delay: 0 },
-  { tagKey: 'card2Tag', titleKey: 'card2Title', locKey: 'card2Loc', delay: 0.1 },
-  { tagKey: 'card3Tag', titleKey: 'card3Title', locKey: 'card3Loc', delay: 0.2 },
-  { tagKey: 'card4Tag', titleKey: 'card4Title', locKey: 'card4Loc', delay: 0.3 },
+  { tagKey: 'card2Tag', titleKey: 'card2Title', locKey: 'card2Loc', delay: 0.08 },
+  { tagKey: 'card3Tag', titleKey: 'card3Title', locKey: 'card3Loc', delay: 0.08 },
+  { tagKey: 'card4Tag', titleKey: 'card4Title', locKey: 'card4Loc', delay: 0.16 },
 ] as const
-
-const ArrowIcon = () => (
-  <svg
-    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] text-gold"
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-  >
-    <circle cx="24" cy="24" r="20" />
-    <path d="M18 24h12M27 19l5 5-5 5" />
-  </svg>
-)
 
 export default function Projects() {
   const t = useTranslations('projects')
 
   return (
-    <section id="projects" className="py-[120px] px-[60px] max-md:py-20 max-md:px-6">
+    <section id="projects" className="py-[120px] px-[60px] max-md:py-16 max-md:px-5">
       <RevealOnScroll>
-        <div className="font-space text-[11px] tracking-[4px] text-gold uppercase flex items-center gap-4 mb-5">
-          <span className="block w-10 h-px bg-gold shrink-0" />
+        <div className="font-space text-[11px] tracking-[3px] text-gold uppercase flex items-center gap-4 mb-4">
+          <span className="block w-8 h-px bg-gold shrink-0" />
           {t('label')}
         </div>
       </RevealOnScroll>
       <RevealOnScroll delay={0.05}>
-        <h2 className="font-bebas text-[clamp(52px,6vw,96px)] leading-[0.95] tracking-[1px] mb-20">
+        <h2 className="font-bebas text-[clamp(48px,6vw,96px)] leading-[0.95] tracking-[1px] mb-16">
           {t('title')}
         </h2>
       </RevealOnScroll>
 
-      <div className="grid grid-cols-2 gap-0.5 bg-gold/[0.08] max-md:grid-cols-1">
-        {cards.map(({ tagKey, titleKey, locKey, delay }, i) => (
+      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 max-md:gap-3">
+        {cards.map(({ tagKey, titleKey, locKey, delay }) => (
           <RevealOnScroll key={tagKey} delay={delay}>
             <div
-              className={`group relative overflow-hidden ${
-                i === 0 ? 'md:row-span-2' : 'aspect-[4/3]'
-              } max-md:aspect-[4/3]`}
+              className="group relative overflow-hidden cursor-pointer"
+              style={{ aspectRatio: '2 / 1' }}
             >
+              {/* Background */}
               <div
-                className="w-full h-full min-h-[280px] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 group-hover:saturate-50"
+                className="absolute inset-0 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                 style={{
-                  background: bgGradients[i],
-                  filter: 'brightness(0.5) saturate(0.7)',
+                  background: 'linear-gradient(160deg, #1c1914 0%, #0c0b09 100%)',
                 }}
               />
+              {/* Gradient overlay */}
               <div
-                className="absolute inset-0 p-8 flex flex-col justify-end"
+                className="absolute inset-0"
                 style={{
-                  background: 'linear-gradient(to top, rgba(12,11,9,0.9) 0%, transparent 60%)',
+                  background:
+                    'linear-gradient(to top, rgba(12,11,9,0.95) 0%, rgba(12,11,9,0.3) 55%, transparent 100%)',
                 }}
-              >
-                <span className="font-space text-[10px] tracking-[3px] uppercase text-gold bg-gold/[0.12] px-3 py-1 mb-2 self-start">
+              />
+              {/* Text */}
+              <div className="absolute bottom-0 left-0 right-0 px-7 py-6 max-md:px-5 max-md:py-5">
+                <span className="font-space text-[10px] tracking-[3px] uppercase text-gold bg-gold/[0.12] border border-gold/[0.18] px-2.5 py-1 mb-3 inline-block">
                   {t(tagKey)}
                 </span>
-                <div className="font-bebas text-[32px] tracking-[1px] text-off-white leading-none">
+                <div className="font-bebas text-[clamp(22px,2.4vw,34px)] tracking-[0.5px] text-off-white leading-none mt-1">
                   {t(titleKey)}
                 </div>
-                <div className="text-[13px] text-muted mt-1">{t(locKey)}</div>
+                <div className="text-[12px] text-muted mt-1.5 font-space tracking-[1px]">
+                  {t(locKey)}
+                </div>
               </div>
-              <ArrowIcon />
+              {/* Arrow — desktop hover only */}
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 translate-y-1.5 group-hover:translate-y-0 transition-all duration-300 text-gold max-md:hidden">
+                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="20" cy="20" r="17" />
+                  <path d="M14 20h12M23 15l5 5-5 5" />
+                </svg>
+              </div>
             </div>
           </RevealOnScroll>
         ))}
