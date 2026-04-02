@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -28,98 +29,35 @@ export default function Hero() {
         }}
       />
 
-      {/* Subtle diagonal accent */}
-      <div
-        className="absolute top-0 right-[18%] w-px h-full z-[2] opacity-15"
-        style={{
-          background: 'linear-gradient(to bottom, transparent 0%, #8A7147 40%, transparent 100%)',
-          transform: 'skewX(-6deg)',
-        }}
-      />
-
-      {/* Architectural building illustration */}
-      <div
-        className="absolute right-0 top-0 bottom-0 w-[52%] z-[1] pointer-events-none overflow-hidden max-md:w-full"
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 400 720"
-          fill="none"
-          stroke="#C8A96E"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 right-0 h-[92%]"
-          style={{ opacity: 0.055 }}
-        >
-          {/* Crane mast */}
-          <line x1="195" y1="0" x2="195" y2="125" strokeWidth="2.5" />
-          {/* Crane jib */}
-          <line x1="85" y1="22" x2="345" y2="22" strokeWidth="1.8" />
-          {/* Counter-jib weight */}
-          <rect x="80" y="16" width="12" height="10" strokeWidth="1" />
-          {/* Stay cables */}
-          <line x1="195" y1="4" x2="320" y2="22" strokeWidth="0.9" />
-          <line x1="195" y1="4" x2="105" y2="22" strokeWidth="0.9" />
-          {/* Trolley */}
-          <rect x="301" y="18" width="10" height="7" strokeWidth="1" />
-          {/* Hoist rope */}
-          <line x1="306" y1="25" x2="306" y2="95" strokeWidth="1" strokeDasharray="5 3" />
-          {/* Hook */}
-          <rect x="300" y="93" width="12" height="8" strokeWidth="1" />
-
-          {/* Main building outline */}
-          <rect x="68" y="125" width="210" height="570" strokeWidth="1.5" />
-
-          {/* Main building windows: 4 cols × 13 rows */}
-          {Array.from({ length: 13 }, (_, row) =>
-            Array.from({ length: 4 }, (_, col) => (
-              <rect
-                key={`mw-${row}-${col}`}
-                x={92 + col * 42}
-                y={148 + row * 40}
-                width="26"
-                height="24"
-                strokeWidth="0.65"
-              />
-            ))
-          )}
-
-          {/* Scaffolding left side */}
-          <line x1="55" y1="125" x2="55" y2="695" strokeWidth="1.3" />
-          <line x1="44" y1="125" x2="44" y2="695" strokeWidth="1.3" />
-          {[190, 250, 310, 370, 430, 490, 550, 610, 668].map((y) => (
-            <line key={`ledger-${y}`} x1="44" y1={y} x2="68" y2={y} strokeWidth="0.9" />
-          ))}
-          {/* Scaffolding diagonal bracing */}
-          <line x1="44" y1="190" x2="55" y2="250" strokeWidth="0.6" />
-          <line x1="55" y1="250" x2="44" y2="310" strokeWidth="0.6" />
-          <line x1="44" y1="310" x2="55" y2="370" strokeWidth="0.6" />
-          <line x1="55" y1="370" x2="44" y2="430" strokeWidth="0.6" />
-
-          {/* Second building (right) */}
-          <rect x="283" y="280" width="90" height="415" strokeWidth="1.3" />
-
-          {/* Second building windows: 2 cols × 8 rows */}
-          {Array.from({ length: 8 }, (_, row) =>
-            Array.from({ length: 2 }, (_, col) => (
-              <rect
-                key={`b2w-${row}-${col}`}
-                x={295 + col * 34}
-                y={300 + row * 50}
-                width="22"
-                height="28"
-                strokeWidth="0.65"
-              />
-            ))
-          )}
-
-          {/* Ground line */}
-          <line x1="18" y1="696" x2="390" y2="696" strokeWidth="1.8" />
-          <line x1="18" y1="700" x2="390" y2="700" strokeWidth="0.6" />
-        </svg>
+      {/* Right: real construction photo */}
+      <div className="absolute right-0 top-0 h-full w-[52%] z-[1] max-md:w-full">
+        <Image
+          src="/images/house-exterior.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        {/* Left blend — photo fades into dark background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(12,11,9,1) 0%, rgba(12,11,9,0.65) 22%, rgba(12,11,9,0.1) 60%, rgba(12,11,9,0) 100%)',
+          }}
+        />
+        {/* Bottom fade for text readability */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(12,11,9,0.9) 0%, rgba(12,11,9,0.3) 30%, transparent 60%)',
+          }}
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-[3] px-[60px] pb-[80px] pt-[140px] max-md:px-5 max-md:pb-12 max-md:pt-[100px]">
+      <div className="relative z-[3] px-[60px] pb-[80px] pt-[140px] max-md:px-5 max-md:pb-12 max-md:pt-[100px] max-w-[54%] max-md:max-w-full">
 
         <motion.p
           className="font-space text-[11px] tracking-[3px] text-gold uppercase mb-5 flex items-center gap-3 max-md:text-[10px] max-md:tracking-[2px]"

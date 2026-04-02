@@ -1,15 +1,21 @@
 import { getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const PROJECT_IDS = ['1', '2', '3', '4'] as const
 type ProjectId = typeof PROJECT_IDS[number]
 
-const cardBgs: Record<ProjectId, string> = {
-  '1': 'linear-gradient(135deg, #1a1f2e 0%, #0e1118 50%, #1c1712 100%)',
-  '2': 'linear-gradient(135deg, #1e1a14 0%, #0f0e0c 50%, #1a1f24 100%)',
-  '3': 'linear-gradient(135deg, #1f1710 0%, #0c0b09 50%, #1a1510 100%)',
-  '4': 'linear-gradient(135deg, #101a12 0%, #0a0f0b 50%, #141a10 100%)',
+const cardImages: Record<ProjectId, string> = {
+  '1': '/images/building-corridor.jpg',
+  '2': '/images/office-corridor.jpg',
+  '3': '/images/bathroom-sauna.jpg',
+  '4': '/images/house-exterior.jpg',
+}
+
+// Optional secondary image for detail pages (e.g. renovation shows kitchen + bathroom)
+const secondaryImages: Partial<Record<ProjectId, string>> = {
+  '3': '/images/kitchen-interior.jpg',
 }
 
 export async function generateStaticParams() {
@@ -50,21 +56,18 @@ export default async function ProjectPage({
         className="mx-[60px] max-md:mx-5 overflow-hidden relative"
         style={{ height: 'clamp(280px, 40vw, 480px)' }}
       >
-        <div className="absolute inset-0" style={{ background: cardBgs[pid] }} />
-        {/* Subtle grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(200,169,110,1) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,1) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
+        <Image
+          src={cardImages[pid]}
+          alt={p('Title')}
+          fill
+          priority
+          className="object-cover object-center"
         />
-        {/* Gradient overlay at bottom */}
+        {/* Gradient overlay at bottom for text readability */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to top, rgba(12,11,9,0.9) 0%, rgba(12,11,9,0.2) 50%, transparent 100%)',
+            background: 'linear-gradient(to top, rgba(12,11,9,0.92) 0%, rgba(12,11,9,0.35) 45%, rgba(12,11,9,0.1) 100%)',
           }}
         />
         {/* Tag + title */}
@@ -85,9 +88,21 @@ export default async function ProjectPage({
       <div className="px-[60px] py-16 max-md:px-5 max-md:py-10 grid grid-cols-[1fr_320px] gap-16 max-lg:grid-cols-1 max-lg:gap-10">
         {/* Left — description + highlights */}
         <div>
-          <p className="text-[18px] text-off-white/80 font-light leading-[1.85] max-md:text-[16px] mb-16 max-md:mb-10 max-w-[620px]">
+          <p className="text-[18px] text-off-white/80 font-light leading-[1.85] max-md:text-[16px] mb-10 max-md:mb-8 max-w-[620px]">
             {p('Desc')}
           </p>
+
+          {secondaryImages[pid] && (
+            <div className="relative mb-12 max-md:mb-8 overflow-hidden" style={{ height: 'clamp(200px, 24vw, 300px)' }}>
+              <Image
+                src={secondaryImages[pid]!}
+                alt=""
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(12,11,9,0.5) 0%, transparent 55%)' }} />
+            </div>
+          )}
 
           <div className="mb-4">
             <div className="font-space text-[10px] tracking-[3px] text-gold uppercase flex items-center gap-3 mb-8">
