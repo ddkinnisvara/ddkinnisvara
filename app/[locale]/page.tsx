@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <>
       <Nav />
-      <main>
+      <main className="overflow-x-hidden w-full">
         <Hero />
         <Services />
         <WhyUs />
