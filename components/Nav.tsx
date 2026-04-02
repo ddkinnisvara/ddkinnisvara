@@ -104,7 +104,7 @@ export default function Nav() {
               key={key}
               href={href}
               onClick={close}
-              className="group flex items-baseline gap-4 font-bebas text-[52px] leading-none text-off-white hover:text-gold transition-colors duration-200 tracking-[1px] border-b border-gold/[0.1] py-5"
+              className="group flex items-baseline gap-4 font-bebas text-[44px] leading-none text-off-white hover:text-gold transition-colors duration-200 tracking-[1px] border-b border-gold/[0.1] py-4"
             >
               <span className="font-space text-[11px] tracking-[2px] text-gold/40 group-hover:text-gold transition-colors duration-200 mb-0.5">
                 {num}

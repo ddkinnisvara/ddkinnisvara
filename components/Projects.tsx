@@ -34,7 +34,7 @@ export default function Projects() {
         </div>
       </RevealOnScroll>
       <RevealOnScroll delay={0.05}>
-        <h2 className="font-bebas text-[clamp(48px,6vw,96px)] leading-[0.95] tracking-[1px] mb-16">
+        <h2 className="font-bebas text-[clamp(48px,6vw,96px)] leading-[0.95] tracking-[1px] mb-16 max-md:mb-10">
           {t('title')}
         </h2>
       </RevealOnScroll>

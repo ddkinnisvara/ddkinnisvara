@@ -25,7 +25,7 @@ export default function WhyUs() {
             </div>
             <div
               className="font-bebas leading-[0.88] tracking-[-2px]"
-              style={{ fontSize: 'clamp(100px, 13vw, 210px)' }}
+              style={{ fontSize: 'clamp(78px, 13vw, 210px)' }}
             >
               <span className="block text-off-white">D&amp;D</span>
             </div>

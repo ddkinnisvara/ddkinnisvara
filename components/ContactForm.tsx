@@ -60,7 +60,7 @@ export default function ContactForm() {
         <p className="font-space text-[10px] tracking-[3px] uppercase text-black/50 mb-3">
           {t('topLabel')}
         </p>
-        <h2 className="font-bebas text-[clamp(52px,7vw,110px)] leading-[0.9] tracking-[1px] text-bg mb-5">
+        <h2 className="font-bebas text-[clamp(44px,7vw,110px)] leading-[0.9] tracking-[1px] text-bg mb-5">
           {t('title')}
         </h2>
         <p className="text-[16px] text-black/60 font-light leading-[1.7]">{t('sub')}</p>

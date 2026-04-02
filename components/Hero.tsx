@@ -54,6 +54,8 @@ export default function Hero() {
               'linear-gradient(to top, rgba(12,11,9,0.9) 0%, rgba(12,11,9,0.3) 30%, transparent 60%)',
           }}
         />
+        {/* Mobile: extra overlay so photo doesn't compete with text */}
+        <div className="absolute inset-0 bg-bg/60 md:hidden" />
       </div>
 
       {/* Content */}

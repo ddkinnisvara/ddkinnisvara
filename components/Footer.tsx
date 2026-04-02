@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-bg pt-16 pb-8 px-[60px] border-t border-gold/[0.08] max-md:px-5 max-md:pt-12">
       <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-[60px] mb-16 max-md:grid-cols-1 max-md:gap-10 md:gap-10 lg:gap-[60px]">
         <div>
-          <div className="font-bebas text-[44px] text-off-white tracking-[2px] leading-none mb-1">
+          <div className="font-bebas text-[44px] max-md:text-[36px] text-off-white tracking-[2px] leading-none mb-1">
             D&amp;D
           </div>
           <p className="text-[14px] text-muted max-w-[280px] leading-[1.7] mb-6 mt-3">

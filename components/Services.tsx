@@ -57,30 +57,33 @@ export default function Services() {
         </div>
       </RevealOnScroll>
       <RevealOnScroll delay={0.05}>
-        <h2 className="font-bebas text-[clamp(48px,6vw,96px)] leading-[0.95] tracking-[1px] mb-16">
+        <h2 className="font-bebas text-[clamp(48px,6vw,96px)] leading-[0.95] tracking-[1px] mb-16 max-md:mb-10">
           {t('title')}
         </h2>
       </RevealOnScroll>
 
-      <div className="grid grid-cols-3 gap-px bg-bg sm:grid-cols-2 max-[639px]:grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-px md:bg-bg">
         {cards.map(({ num, titleKey, descKey, delay }, i) => (
           <RevealOnScroll key={num} delay={delay}>
             <div className="group relative bg-bg hover:bg-bg3 transition-colors duration-300 overflow-hidden h-full border border-gold/[0.07]">
-              <div className="p-10 max-md:p-7 flex flex-col h-full">
-                <div className="font-space text-[10px] text-gold-dim tracking-[2px] mb-6">
+              <div className="p-10 max-md:p-5 flex flex-col h-full">
+                <div className="font-space text-[10px] text-gold-dim tracking-[2px] mb-4 max-md:mb-3">
                   {num}
                 </div>
-                {icons[i]}
-                <div className="font-bebas text-[28px] tracking-[1px] text-off-white mb-2 leading-none">
+                <div className="max-md:[&>svg]:w-7 max-md:[&>svg]:h-7 max-md:[&>svg]:mb-3">
+                  {icons[i]}
+                </div>
+                <div className="font-bebas text-[28px] max-md:text-[19px] tracking-[1px] text-off-white leading-tight">
                   {t(titleKey)}
                 </div>
-                <p className="text-[14px] text-muted leading-[1.75] mt-3 flex-1">
+                <p className="text-[14px] text-muted leading-[1.75] mt-3 flex-1 max-md:hidden">
                   {t(descKey)}
                 </p>
-                <div className="mt-6 font-space text-[10px] tracking-[2px] text-gold-dim uppercase flex items-center gap-2 group-hover:gap-4 group-hover:text-gold transition-all duration-300">
+                <div className="mt-6 max-md:mt-3 font-space text-[10px] tracking-[2px] text-gold-dim uppercase flex items-center gap-2 group-hover:gap-4 group-hover:text-gold transition-all duration-300 max-md:hidden">
                   <span>{t('learnMore')}</span>
                   <span>&rarr;</span>
                 </div>
+                <div className="mt-3 md:hidden text-gold opacity-40 text-[14px]">→</div>
               </div>
               <div className="service-card-line" />
             </div>
@@ -90,13 +93,15 @@ export default function Services() {
         {/* Card 6 — CTA */}
         <RevealOnScroll delay={0.24}>
           <div className="group relative bg-bg hover:bg-bg3 transition-colors duration-300 overflow-hidden h-full border border-gold/[0.07]">
-            <div className="p-10 max-md:p-7 flex flex-col h-full">
-              <div className="font-space text-[10px] text-gold-dim tracking-[2px] mb-6">06</div>
-              {icons[5]}
-              <div className="font-space text-[10px] tracking-[3px] text-gold-dim uppercase mb-3">
+            <div className="p-10 max-md:p-5 flex flex-col h-full">
+              <div className="font-space text-[10px] text-gold-dim tracking-[2px] mb-4 max-md:mb-3">06</div>
+              <div className="max-md:[&>svg]:w-7 max-md:[&>svg]:h-7 max-md:[&>svg]:mb-3">
+                {icons[5]}
+              </div>
+              <div className="font-space text-[10px] tracking-[3px] text-gold-dim uppercase mb-2 max-md:hidden">
                 {t('card6Label')}
               </div>
-              <div className="font-bebas text-[28px] tracking-[1px] text-off-white leading-[1.1] flex-1 mb-6">
+              <div className="font-bebas text-[28px] max-md:text-[19px] tracking-[1px] text-off-white leading-tight flex-1 mb-4 max-md:mb-3">
                 {t('card6Title')}
               </div>
               <a
