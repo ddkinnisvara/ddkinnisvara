@@ -6,8 +6,8 @@ export default function Testimonials() {
   const t = useTranslations('testimonials')
 
   const items = [
-    { textKey: 't1Text', nameKey: 't1Name', companyKey: 't1Company', delay: 0 },
-    { textKey: 't2Text', nameKey: 't2Name', companyKey: 't2Company', delay: 0.15 },
+    { textKey: 't1Text', nameKey: 't1Name', companyKey: 't1Company', initialsKey: 't1Initials', delay: 0 },
+    { textKey: 't2Text', nameKey: 't2Name', companyKey: 't2Company', initialsKey: 't2Initials', delay: 0.15 },
   ] as const
 
   return (
@@ -25,7 +25,7 @@ export default function Testimonials() {
       </RevealOnScroll>
 
       <div className="grid grid-cols-2 max-md:grid-cols-1">
-        {items.map(({ textKey, nameKey, companyKey, delay }, i) => (
+        {items.map(({ textKey, nameKey, companyKey, initialsKey, delay }, i) => (
           <RevealOnScroll key={nameKey} delay={delay}>
             <div
               className={`py-2 max-md:py-10 ${
@@ -45,9 +45,16 @@ export default function Testimonials() {
               </p>
 
               {/* Attribution */}
-              <div className="pt-7 border-t border-gold/[0.1]">
-                <div className="text-[15px] font-medium text-off-white">{t(nameKey)}</div>
-                <div className="text-[12px] text-muted font-space tracking-[1px] mt-1">{t(companyKey)}</div>
+              <div className="flex items-center gap-4 pt-7 border-t border-gold/[0.1]">
+                <div className="w-10 h-10 shrink-0 border border-gold/[0.2] flex items-center justify-center">
+                  <span className="font-bebas text-[16px] tracking-[1px] text-gold">
+                    {t(initialsKey)}
+                  </span>
+                </div>
+                <div>
+                  <div className="text-[15px] font-medium text-off-white">{t(nameKey)}</div>
+                  <div className="text-[12px] text-muted font-space tracking-[1px] mt-0.5">{t(companyKey)}</div>
+                </div>
               </div>
             </div>
           </RevealOnScroll>

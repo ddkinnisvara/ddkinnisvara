@@ -1,16 +1,29 @@
 'use client'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import RevealOnScroll from './RevealOnScroll'
 
+// Each card has its own atmospheric gradient suggesting the project type
+const cardBgs = [
+  'linear-gradient(135deg, #1a1f2e 0%, #0e1118 50%, #1c1712 100%)', // Construction — cool concrete blue
+  'linear-gradient(135deg, #1e1a14 0%, #0f0e0c 50%, #1a1f24 100%)', // Maintenance — neutral dark
+  'linear-gradient(135deg, #1f1710 0%, #0c0b09 50%, #1a1510 100%)', // Renovation — warm interior
+  'linear-gradient(135deg, #101a12 0%, #0a0f0b 50%, #141a10 100%)', // Outdoor — earthy green-dark
+]
+
 const cards = [
-  { tagKey: 'card1Tag', titleKey: 'card1Title', locKey: 'card1Loc', delay: 0 },
-  { tagKey: 'card2Tag', titleKey: 'card2Title', locKey: 'card2Loc', delay: 0.08 },
-  { tagKey: 'card3Tag', titleKey: 'card3Title', locKey: 'card3Loc', delay: 0.08 },
-  { tagKey: 'card4Tag', titleKey: 'card4Title', locKey: 'card4Loc', delay: 0.16 },
+  { id: '1', tagKey: 'card1Tag', titleKey: 'card1Title', locKey: 'card1Loc', delay: 0 },
+  { id: '2', tagKey: 'card2Tag', titleKey: 'card2Title', locKey: 'card2Loc', delay: 0.08 },
+  { id: '3', tagKey: 'card3Tag', titleKey: 'card3Title', locKey: 'card3Loc', delay: 0.08 },
+  { id: '4', tagKey: 'card4Tag', titleKey: 'card4Title', locKey: 'card4Loc', delay: 0.16 },
 ] as const
 
 export default function Projects() {
   const t = useTranslations('projects')
+  const locale = useLocale()
+
+  const hrefFor = (id: string) =>
+    locale === 'fi' ? `/projects/${id}` : `/en/projects/${id}`
 
   return (
     <section id="projects" className="py-[120px] px-[60px] max-md:py-16 max-md:px-5">
@@ -27,18 +40,17 @@ export default function Projects() {
       </RevealOnScroll>
 
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 max-md:gap-3">
-        {cards.map(({ tagKey, titleKey, locKey, delay }) => (
+        {cards.map(({ id, tagKey, titleKey, locKey, delay }, i) => (
           <RevealOnScroll key={tagKey} delay={delay}>
-            <div
-              className="group relative overflow-hidden cursor-pointer"
+            <a
+              href={hrefFor(id)}
+              className="group relative overflow-hidden cursor-pointer block"
               style={{ aspectRatio: '2 / 1' }}
             >
-              {/* Background */}
+              {/* Background — unique per card */}
               <div
                 className="absolute inset-0 transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-                style={{
-                  background: 'linear-gradient(160deg, #1c1914 0%, #0c0b09 100%)',
-                }}
+                style={{ background: cardBgs[i] }}
               />
               {/* Gradient overlay */}
               <div
@@ -60,14 +72,14 @@ export default function Projects() {
                   {t(locKey)}
                 </div>
               </div>
-              {/* Arrow — desktop hover only */}
+              {/* Arrow on hover */}
               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 translate-y-1.5 group-hover:translate-y-0 transition-all duration-300 text-gold max-md:hidden">
                 <svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="20" cy="20" r="17" />
                   <path d="M14 20h12M23 15l5 5-5 5" />
                 </svg>
               </div>
-            </div>
+            </a>
           </RevealOnScroll>
         ))}
       </div>
