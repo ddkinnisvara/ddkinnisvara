@@ -13,8 +13,7 @@ export default function Testimonials() {
   return (
     <section className="bg-bg2 py-[120px] px-[60px] max-md:py-16 max-md:px-5">
       <RevealOnScroll>
-        <div className="font-space text-[11px] tracking-[3px] text-gold uppercase flex items-center gap-4 mb-4">
-          <span className="block w-8 h-px bg-gold shrink-0" />
+        <div className="font-space text-[11px] tracking-[3px] text-gold uppercase mb-4">
           {t('label')}
         </div>
       </RevealOnScroll>
@@ -45,7 +44,7 @@ export default function Testimonials() {
               </p>
 
               {/* Attribution */}
-              <div className="flex items-center gap-4 pt-7 border-t border-gold/[0.1]">
+              <div className="flex items-center gap-4 mt-auto pt-4">
                 <div className="w-10 h-10 shrink-0 border border-gold/[0.2] flex items-center justify-center">
                   <span className="font-bebas text-[16px] tracking-[1px] text-gold">
                     {t(initialsKey)}

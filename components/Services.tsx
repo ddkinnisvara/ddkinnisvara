@@ -51,8 +51,7 @@ export default function Services() {
   return (
     <section id="services" className="py-[120px] px-[60px] max-md:py-16 max-md:px-5">
       <RevealOnScroll>
-        <div className="font-space text-[11px] tracking-[3px] text-gold uppercase flex items-center gap-4 mb-4">
-          <span className="block w-8 h-px bg-gold shrink-0" />
+        <div className="font-space text-[11px] tracking-[3px] text-gold uppercase mb-4">
           {t('label')}
         </div>
       </RevealOnScroll>

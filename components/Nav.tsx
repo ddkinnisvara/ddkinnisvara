@@ -57,10 +57,10 @@ export default function Nav() {
           <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
             {links.map(({ href, num, key }) => (
               <a key={key} href={href} className="group flex flex-col items-center gap-0.5">
-                <span className="font-space text-[9px] tracking-[2px] text-gold opacity-30 group-hover:opacity-70 transition-opacity duration-300">
+                <span className="font-space text-[9px] tracking-[2px] text-gold opacity-50 group-hover:opacity-90 transition-opacity duration-300">
                   {num}
                 </span>
-                <span className="font-space text-[11px] tracking-[2px] uppercase text-muted group-hover:text-off-white transition-colors duration-300">
+                <span className="font-space text-[11px] tracking-[2px] uppercase text-off-white/70 group-hover:text-off-white transition-colors duration-300">
                   {t(key)}
                 </span>
                 <span className="block h-px w-0 bg-gold group-hover:w-full transition-all duration-300" />

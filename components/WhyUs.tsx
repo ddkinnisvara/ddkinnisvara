@@ -19,8 +19,7 @@ export default function WhyUs() {
         {/* Left — sticky display column */}
         <RevealOnScroll>
           <div className="sticky top-[100px] max-md:static">
-            <div className="font-space text-[11px] tracking-[4px] text-gold uppercase flex items-center gap-3 mb-6">
-              <span className="block w-8 h-px bg-gold shrink-0" />
+            <div className="font-space text-[11px] tracking-[4px] text-gold uppercase mb-6">
               WHY
             </div>
             <div

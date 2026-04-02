@@ -62,10 +62,9 @@ export default function Hero() {
       <div className="relative z-[3] px-[60px] pb-[80px] pt-[140px] max-md:px-5 max-md:pb-12 max-md:pt-[100px] max-w-[54%] max-md:max-w-full">
 
         <motion.p
-          className="font-space text-[11px] tracking-[3px] text-gold uppercase mb-5 flex items-center gap-3 max-md:text-[10px] max-md:tracking-[2px]"
+          className="font-space text-[11px] tracking-[3px] text-gold uppercase mb-5 max-md:text-[10px] max-md:tracking-[2px]"
           {...fadeUp(0.2)}
         >
-          <span className="block w-8 h-px bg-gold shrink-0" />
           {t('label')}
         </motion.p>
 
@@ -89,7 +88,7 @@ export default function Hero() {
         </h1>
 
         <motion.p
-          className="text-[17px] text-muted max-w-[460px] font-light leading-[1.7] mb-10 max-md:text-[15px] max-md:mb-8"
+          className="text-[17px] text-muted max-w-[460px] font-light leading-[1.7] mb-10 max-md:hidden"
           {...fadeUp(1.0)}
         >
           {t('sub')}
@@ -113,12 +112,12 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        <motion.div className="flex gap-10 max-md:gap-6 flex-wrap" {...fadeUp(1.2)}>
+        <motion.div className="flex gap-10 max-md:grid max-md:grid-cols-3 max-md:gap-x-4" {...fadeUp(1.2)}>
           <div className="flex flex-col">
             <div className="font-bebas text-[44px] text-off-white leading-none max-md:text-[36px]">
               20<span className="text-gold">+</span>
             </div>
-            <div className="font-space text-[10px] tracking-[2px] text-muted uppercase mt-1">
+            <div className="font-space text-[10px] tracking-[2px] text-muted uppercase mt-1 max-md:tracking-[0px] max-md:text-[9px]">
               {t('stat1Label')}
             </div>
           </div>
@@ -126,7 +125,7 @@ export default function Hero() {
             <div className="font-bebas text-[44px] text-off-white leading-none max-md:text-[36px]">
               500<span className="text-gold">+</span>
             </div>
-            <div className="font-space text-[10px] tracking-[2px] text-muted uppercase mt-1">
+            <div className="font-space text-[10px] tracking-[2px] text-muted uppercase mt-1 max-md:tracking-[0px] max-md:text-[9px]">
               {t('stat2Label')}
             </div>
           </div>
@@ -134,7 +133,7 @@ export default function Hero() {
             <div className="font-bebas text-[44px] text-off-white leading-none max-md:text-[36px]">
               100<span className="text-gold">%</span>
             </div>
-            <div className="font-space text-[10px] tracking-[2px] text-muted uppercase mt-1">
+            <div className="font-space text-[10px] tracking-[2px] text-muted uppercase mt-1 max-md:tracking-[0px] max-md:text-[9px]">
               {t('stat3Label')}
             </div>
           </div>

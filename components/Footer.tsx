@@ -6,8 +6,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-bg pt-16 pb-8 px-[60px] border-t border-gold/[0.08] max-md:px-5 max-md:pt-12">
-      <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-[60px] mb-16 max-md:grid-cols-1 max-md:gap-10 md:gap-10 lg:gap-[60px]">
-        <div>
+      <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-[60px] mb-16 md:gap-10 lg:gap-[60px] max-md:grid-cols-2 max-md:gap-x-8 max-md:gap-y-10">
+        <div className="max-md:col-span-2">
           <div className="font-bebas text-[44px] max-md:text-[36px] text-off-white tracking-[2px] leading-none mb-1">
             D&amp;D
           </div>
@@ -60,20 +60,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="max-md:col-span-2">
           <div className="font-space text-[10px] tracking-[3px] uppercase text-gold mb-5">
             {t('contactTitle')}
           </div>
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2.5 max-md:flex-row max-md:flex-wrap max-md:gap-x-6 max-md:gap-y-1.5">
             <a href="tel:+358401234567" className="text-[14px] text-muted hover:text-off-white transition-colors duration-200">+358 40 123 4567</a>
             <a href="mailto:info@ddyhtiot.fi" className="text-[14px] text-muted hover:text-off-white transition-colors duration-200">info@ddyhtiot.fi</a>
-            <span className="text-[14px] text-muted">Mannerheimintie 12</span>
-            <span className="text-[14px] text-muted">00100 Helsinki</span>
+            <span className="text-[14px] text-muted">Mannerheimintie 12, Helsinki</span>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-between items-center pt-8 border-t border-gold/[0.08] max-md:flex-col max-md:gap-3 max-md:items-start">
+      <div className="flex justify-between items-center pt-8 border-t border-gold/[0.08]">
         <div className="font-space text-[11px] text-muted2 tracking-[1px]">
           {t('copyright')}
         </div>
