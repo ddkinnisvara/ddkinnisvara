@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0C0B09;
+  --bg2: #131210;
+  --bg3: #1A1917;
+  --gold: #C8A96E;
+  --gold-light: #DFC08A;
+  --gold-dim: #8A7147;
+  --off-white: #F2EFE9;
+  --muted: #6B6560;
+  --muted2: #4A4643;
+  --border: rgba(200, 169, 110, 0.15);
+  --border2: rgba(200, 169, 110, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+}
+
+@layer utilities {
+  .text-stroke-border {
+    -webkit-text-stroke: 1px rgba(200, 169, 110, 0.15);
+  }
+  .text-stroke-border2 {
+    -webkit-text-stroke: 1px rgba(200, 169, 110, 0.08);
+  }
+  .text-stroke-gold-dim {
+    -webkit-text-stroke: 1px #8A7147;
+  }
+}
+
+/* Contact form select option styling */
+.contact-form select option {
+  background: var(--bg);
+  color: var(--off-white);
+}
+
+/* Service card bottom line hover */
+.service-card-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #C8A96E;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .service-card-line {
+  transform: scaleX(1);
+}
