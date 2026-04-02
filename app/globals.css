@@ -17,18 +17,17 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 3px;
+body {
+  overflow-x: clip;
 }
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--gold-dim);
-}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); }
 
 @layer utilities {
   .text-stroke-border {
@@ -42,18 +41,14 @@ html {
   }
 }
 
-/* Contact form select option styling */
 .contact-form select option {
   background: var(--bg);
   color: var(--off-white);
 }
 
-/* Service card bottom line hover */
 .service-card-line {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 2px;
   background: #C8A96E;
   transform: scaleX(0);

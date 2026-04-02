@@ -97,8 +97,8 @@ export default function Nav() {
 
       {/* Mobile full-screen menu */}
       <div
-        className={`fixed inset-0 z-[99] bg-bg md:hidden flex flex-col px-8 pt-[90px] pb-10 transition-transform duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-[99] bg-bg md:hidden flex flex-col px-8 pt-[90px] pb-10 transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
         <div className="flex flex-col flex-1">
