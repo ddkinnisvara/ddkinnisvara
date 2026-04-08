@@ -48,6 +48,7 @@ export default function ContactForm() {
   const services = [
     t('service1'), t('service2'), t('service3'),
     t('service4'), t('service5'), t('service6'),
+    t('service7'), t('service8'),
   ]
 
   return (

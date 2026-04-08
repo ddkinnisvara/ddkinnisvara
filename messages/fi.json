@@ -5,7 +5,7 @@
   },
   "nav": {
     "services": "Palvelut",
-    "projects": "Projektit",
+    "gallery": "Galleria",
     "about": "Meistä",
     "contact": "Yhteystiedot",
     "cta": "Pyydä tarjous"
@@ -36,9 +36,13 @@
     "card4Desc": "Ajoteiden, aitojen ja maisemoinnin suunnittelu sekä toteutus. Luomme piha-alueet, joista voi olla ylpeä.",
     "card5Title": "Hätäpalvelu 24/7",
     "card5Desc": "Ympärivuorokautinen päivystys kiinteistön akuutteihin ongelmiin. Olemme paikalla nopeasti, kun tarvitset apua eniten.",
-    "card6Label": "Räätälöity ratkaisu",
-    "card6Title": "Ei löydä sopivaa? Ota yhteyttä - räätälöimme.",
-    "card6Cta": "Ota yhteyttä"
+    "card6Title": "Rakennussiivous",
+    "card6Desc": "Ammattitaitoinen loppusiivous rakennusprojektin jälkeen. Pölyjen poisto, pintojen pesu ja tilojen viimeistely muuttovalmiiksi.",
+    "card7Title": "Purkutyöt",
+    "card7Desc": "Turvallinen ja tehokas purkutyö osaavalla tiimillä. Rakenteiden purku, jätteiden lajittelu ja kierrätys asianmukaisesti.",
+    "card8Label": "Räätälöity ratkaisu",
+    "card8Title": "Ei löydä sopivaa? Ota yhteyttä - räätälöimme.",
+    "card8Cta": "Ota yhteyttä"
   },
   "whyUs": {
     "tagline": "Rakentaminen on helppoa lupauksia - meidän ero on se, että pidämme ne.",
@@ -67,21 +71,10 @@
     "stat4Num": "24/7",
     "stat4Label": "Hätäpalvelu"
   },
-  "projects": {
-    "label": "Referenssit",
-    "title": "TEHTYJÄ TÖITÄ",
-    "card1Tag": "Rakentaminen",
-    "card1Title": "Asuinkerrostalon täysremontti",
-    "card1Loc": "Helsinki, 2024",
-    "card2Tag": "Kiinteistöhuolto",
-    "card2Title": "Toimistokiinteistön ylläpito",
-    "card2Loc": "Tampere, 2024",
-    "card3Tag": "Remontointi",
-    "card3Title": "Kylpyhuone & keittiöremontti",
-    "card3Loc": "Espoo, 2023",
-    "card4Tag": "Piha-alue",
-    "card4Title": "Pihamaisemointi ja ajotie",
-    "card4Loc": "Vantaa, 2023"
+  "gallery": {
+    "label": "Galleria",
+    "title": "MEIDÄN TYÖTÄ",
+    "seeMore": "Katso lisää"
   },
   "testimonials": {
     "label": "Asiakkaat",
@@ -111,7 +104,9 @@
     "service3": "Remontointi",
     "service4": "Piha & Ulkoalueet",
     "service5": "Hätäpalvelu",
-    "service6": "Muu",
+    "service6": "Rakennussiivous",
+    "service7": "Purkutyöt",
+    "service8": "Muu",
     "messagePlaceholder": "Kerro meille projektistasi...",
     "submit": "Lähetä pyyntö →",
     "errorNameRequired": "Nimi on pakollinen",
@@ -179,6 +174,11 @@
     "p4H3": "Ulko-LED-valaistus koko pihalle",
     "p4H4": "Yksityisyysaita ja korotetut istutusaltaat"
   },
+  "galleryPage": {
+    "label": "Galleria",
+    "title": "KAIKKI KUVAT",
+    "backLink": "← Takaisin etusivulle"
+  },
   "footer": {
     "tagline": "Ammattimainen kiinteistönhuolto ja rakentaminen - luotettavasti, ajallaan, sovitulla hinnalla.",
     "servicesTitle": "Palvelut",
@@ -187,6 +187,8 @@
     "service3": "Remontointi",
     "service4": "Piha & Ulkoalueet",
     "service5": "Hätäpalvelu 24/7",
+    "service6": "Rakennussiivous",
+    "service7": "Purkutyöt",
     "companyTitle": "Yritys",
     "company1": "Meistä",
     "company2": "Referenssit",

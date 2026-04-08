@@ -6,7 +6,7 @@ import LangToggle from './LangToggle'
 const links = [
   { href: '#services', num: '01', key: 'services' as const },
   { href: '#about',    num: '02', key: 'about'    as const },
-  { href: '#projects', num: '03', key: 'projects' as const },
+  { href: '#gallery',  num: '03', key: 'gallery'  as const },
   { href: '#contact',  num: '04', key: 'contact'  as const },
 ]
 

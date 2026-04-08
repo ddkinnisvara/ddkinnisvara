@@ -105,7 +105,7 @@ export default function Hero() {
             {t('ctaPrimary')}
           </a>
           <a
-            href="#projects"
+            href="#gallery"
             className="font-space text-[11px] tracking-[2px] uppercase text-gold border border-gold-dim px-8 py-4 hover:border-gold hover:text-gold-light hover:-translate-y-0.5 transition-all duration-200 text-center"
           >
             {t('ctaGhost')}

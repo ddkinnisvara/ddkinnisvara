@@ -5,7 +5,7 @@
   },
   "nav": {
     "services": "Services",
-    "projects": "Projects",
+    "gallery": "Gallery",
     "about": "About",
     "contact": "Contact",
     "cta": "Get a Quote"
@@ -36,9 +36,13 @@
     "card4Desc": "Design and construction of driveways, fencing and landscaping. We create outdoor spaces you can be proud of.",
     "card5Title": "Emergency Service 24/7",
     "card5Desc": "Round-the-clock response to urgent property issues. We're on site fast when you need help the most.",
-    "card6Label": "Custom solution",
-    "card6Title": "Can't find the right fit? Contact us - we tailor it.",
-    "card6Cta": "Get in Touch"
+    "card6Title": "Post-Construction Cleaning",
+    "card6Desc": "Professional cleaning after construction projects. Dust removal, surface washing and finishing spaces to move-in ready condition.",
+    "card7Title": "Demolition Work",
+    "card7Desc": "Safe and efficient demolition by an experienced team. Structural dismantling, waste sorting and proper recycling.",
+    "card8Label": "Custom solution",
+    "card8Title": "Can't find the right fit? Contact us - we tailor it.",
+    "card8Cta": "Get in Touch"
   },
   "whyUs": {
     "tagline": "Construction is full of easy promises - our difference is that we keep them.",
@@ -67,21 +71,10 @@
     "stat4Num": "24/7",
     "stat4Label": "Emergency service"
   },
-  "projects": {
-    "label": "Our Work",
-    "title": "COMPLETED PROJECTS",
-    "card1Tag": "Construction",
-    "card1Title": "Full apartment block renovation",
-    "card1Loc": "Helsinki, 2024",
-    "card2Tag": "Maintenance",
-    "card2Title": "Office property maintenance",
-    "card2Loc": "Tampere, 2024",
-    "card3Tag": "Renovation",
-    "card3Title": "Bathroom & kitchen renovation",
-    "card3Loc": "Espoo, 2023",
-    "card4Tag": "Outdoor",
-    "card4Title": "Yard landscaping & driveway",
-    "card4Loc": "Vantaa, 2023"
+  "gallery": {
+    "label": "Gallery",
+    "title": "OUR WORK",
+    "seeMore": "See More"
   },
   "testimonials": {
     "label": "Clients",
@@ -111,7 +104,9 @@
     "service3": "Renovation",
     "service4": "Yard & Outdoor",
     "service5": "Emergency Service",
-    "service6": "Other",
+    "service6": "Post-Construction Cleaning",
+    "service7": "Demolition Work",
+    "service8": "Other",
     "messagePlaceholder": "Tell us about your project...",
     "submit": "Send Request →",
     "errorNameRequired": "Name is required",
@@ -179,6 +174,11 @@
     "p4H3": "Outdoor LED lighting across full yard",
     "p4H4": "Privacy fence and raised planting beds"
   },
+  "galleryPage": {
+    "label": "Gallery",
+    "title": "ALL PHOTOS",
+    "backLink": "\u2190 Back to homepage"
+  },
   "footer": {
     "tagline": "Professional property maintenance and construction - reliably, on time, at the agreed price.",
     "servicesTitle": "Services",
@@ -187,6 +187,8 @@
     "service3": "Renovation",
     "service4": "Yard & Outdoor",
     "service5": "Emergency 24/7",
+    "service6": "Post-Construction Cleaning",
+    "service7": "Demolition Work",
     "companyTitle": "Company",
     "company1": "About Us",
     "company2": "References",
