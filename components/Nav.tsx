@@ -50,7 +50,7 @@ export default function Nav() {
             <img
               src="/images/logo.png"
               alt="D&D Yhtiöt Oy"
-              className="h-[40px] max-md:h-[32px] w-auto object-contain brightness-100 group-hover:brightness-125 transition-all duration-300"
+              className="h-[52px] max-md:h-[40px] w-auto object-contain brightness-100 group-hover:brightness-125 transition-all duration-300"
             />
           </a>
 
