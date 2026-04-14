@@ -48,7 +48,7 @@ export default function Nav() {
           {/* Logo */}
           <a href="#" className="flex leading-none no-underline shrink-0 group">
             <img
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="D&D Yhtiöt Oy"
               className="h-[40px] max-md:h-[32px] w-auto object-contain brightness-100 group-hover:brightness-125 transition-all duration-300"
             />

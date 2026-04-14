@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="grid grid-cols-[2fr_1fr_1fr] gap-10 mb-16 max-md:grid-cols-2 max-md:gap-x-8 max-md:gap-y-10">
         <div className="max-md:col-span-2">
           <img
-            src="/images/logo.jpeg"
+            src="/images/logo.png"
             alt="D&D Yhtiöt Oy"
             className="h-[56px] max-md:h-[44px] w-auto object-contain mb-1"
           />
