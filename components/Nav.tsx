@@ -47,10 +47,11 @@ export default function Nav() {
         <div className="relative z-[1] flex items-center justify-between px-[60px] py-5 max-md:px-5 max-md:py-4">
           {/* Logo */}
           <a href="#" className="flex leading-none no-underline shrink-0 group">
-            <div className="flex flex-col leading-none">
-              <span className="font-bebas text-[28px] text-off-white tracking-[3px] group-hover:text-gold transition-colors duration-300">D&amp;D</span>
-              <span className="font-space text-[8px] tracking-[3px] text-gold-dim uppercase -mt-0.5">Yhtiöt Oy</span>
-            </div>
+            <img
+              src="/images/logo.jpeg"
+              alt="D&D Yhtiöt Oy"
+              className="h-[40px] max-md:h-[32px] w-auto object-contain brightness-100 group-hover:brightness-125 transition-all duration-300"
+            />
           </a>
 
           {/* Desktop links — centered absolutely */}
