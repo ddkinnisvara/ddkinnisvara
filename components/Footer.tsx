@@ -56,7 +56,7 @@ export default function Footer() {
             {t('contactTitle')}
           </div>
           <div className="flex flex-col gap-2.5 max-md:flex-row max-md:flex-wrap max-md:gap-x-6 max-md:gap-y-1.5">
-            <a href="tel:+358401234567" className="text-[14px] text-muted hover:text-off-white transition-colors duration-200">+358 40 123 4567</a>
+            <a href="tel:+358401592800" className="text-[14px] text-muted hover:text-off-white transition-colors duration-200">+358 40 159 2800</a>
             <a href="mailto:info@ddyhtiot.fi" className="text-[14px] text-muted hover:text-off-white transition-colors duration-200">info@ddyhtiot.fi</a>
             <span className="text-[14px] text-muted">Mannerheimintie 12, Helsinki</span>
           </div>

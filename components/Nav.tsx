@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import LangToggle from './LangToggle'
 
 const links = [
@@ -46,13 +47,13 @@ export default function Nav() {
 
         <div className="relative z-[1] flex items-center justify-between px-[60px] py-5 max-md:px-5 max-md:py-4">
           {/* Logo */}
-          <a href="#" className="flex leading-none no-underline shrink-0 group">
+          <Link href="/" className="flex leading-none no-underline shrink-0 group">
             <img
               src="/images/logo.png"
               alt="D&D Yhtiöt Oy"
               className="h-[52px] max-md:h-[40px] w-auto object-contain brightness-100 group-hover:brightness-125 transition-all duration-300"
             />
-          </a>
+          </Link>
 
           {/* Desktop links — centered absolutely */}
           <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
